@@ -1,9 +1,7 @@
-// const dadoUtente =
-
-const pulsanteDado = document.getElementById('button');
+const diceButtonElement = document.getElementById('button');
 const resultsElement = document.getElementById('results');
 
- pulsanteDado.addEventListener('click', function() {
+ diceButtonElement.addEventListener('click', function() {
     
         const randomNumberPlayer = Math.floor(Math.random() * 6 + 1 )
         console.log(randomNumberPlayer);      
@@ -33,3 +31,39 @@ const resultsElement = document.getElementById('results');
 });
 
 
+const verificationButtonElement = document.getElementById('mail-button');
+const verificationMessage = document.getElementById('mailVerification');
+const mailElement = document.getElementById('email');
+
+let mailingList = [
+    "info@boolean.com",
+    "info@booleancareers.com",
+    "teacher@boolean.com",
+    "tutor@boolean.com",
+    "tutor@booleancareers.com",
+    "teacher@booleancareers.com",
+    "student@boolean.com",
+    "student@booleancareers.com",
+    "administration@boolean.com",
+    "administration@booleancareers.com"
+]
+
+    for (let i= 0; i < mailingList.length; i++) {
+    console.log(mailingList[i])
+
+    verificationButtonElement.addEventListener('click', function() {
+        console.log(mailElement.value)
+        
+    if (mailElement.value === mailingList[i])
+    {
+        console.log('bravo! :)')
+        verificationMessage.innerHTML = "ok!";
+    }
+    else
+    {
+        console.log('no bravo')
+        verificationMessage.innerHTML = "no!";
+    }
+   
+    });
+}
