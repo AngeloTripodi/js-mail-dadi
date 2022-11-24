@@ -1,0 +1,12 @@
+.customClass{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.playerWin{
+    color: green;
+}
+
+.computerWin{
+    color: red;
+}
