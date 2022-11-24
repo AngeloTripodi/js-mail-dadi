@@ -48,22 +48,37 @@ let mailingList = [
     "administration@booleancareers.com"
 ]
 
-    for (let i= 0; i < mailingList.length; i++) {
-    console.log(mailingList[i])
+   
 
     verificationButtonElement.addEventListener('click', function() {
-        console.log(mailElement.value)
-        
-    if (mailElement.value === mailingList[i])
-    {
-        console.log('bravo! :)')
-        verificationMessage.innerHTML = "ok!";
+    let mailValidationCount = 0;    
+
+    for (let i= 0; i < mailingList.length; i++) {
+    
+        if (mailElement.value == mailingList[i])
+        {
+            mailValidationCount = mailValidationCount + 1;
+            console.log(mailingList[i])
+            console.log(mailElement.value)
+        }
+        else
+        {
+            console.log(mailingList[i])
+            console.log(mailElement.value)
+
+        }
+    
     }
-    else
-    {
-        console.log('no bravo')
-        verificationMessage.innerHTML = "no!";
+
+    if (mailValidationCount === 1){
+        verificationMessage.innerHTML = "Ottimo, la tua mail è presente e verificata!";
     }
-   
+    else{
+        verificationMessage.innerHTML = "Ci dispiace, ma la tua mail non è presente nella nostra lista.";
+    }
+       
+    console.log(mailValidationCount);
     });
-}
+
+ 
+   
